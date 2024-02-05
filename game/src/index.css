@@ -1,0 +1,188 @@
+/* src/App.css */
+/* ... Existing styles ... */
+/* Add or update these styles in your CSS */
+.custom-swal-container {
+  
+  border-radius: 10px;
+}
+
+.custom-swal-popup {
+  border: 2px solid #3498db;
+}
+
+.custom-swal-title {
+  color: #3498db;
+}
+
+.custom-swal-text {
+  color: #555;
+}
+
+.custom-swal-confirm-button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.custom-swal-background{
+  background-image: url('./confetti-31.gif');
+  background-size: cover;
+  background-position: center;
+ 
+}
+body{
+  /* background-color: #ffc0cb; */
+  background-image: url('./Ocean.svg');
+  color: var(--sec-color);
+  margin:0;
+}
+.envelope {
+  position: relative;
+  width: 266px;
+  height: 203px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.envelope .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.envelope .envelope-front {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+
+.envelope .envelope-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  
+
+}
+
+.envelope h2 {
+  font-size: 18px; /* Adjust font size as needed */
+  margin-bottom: 10px;
+  max-width: 80%; /* Set max-width to allow some space on the sides */
+  text-align: center; /* Center the text */
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%; /* Set width to match the card */
+  max-width: 200px; /* Set max-width to limit the width if needed */
+}
+
+.options > div {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color:white;
+}
+
+.options > div:hover {
+  background-color: pink;
+}
+
+.cards-container {
+  display: flex;
+  gap: 10px; /* Adjust the gap between cards as needed */
+  justify-content: center; /* Align cards to the center horizontally */
+  margin-top: 20px; /* Add margin for better spacing */
+}
+
+
+.score {
+  width: 100px;
+  height: 100px; 
+  margin-right: 100px; 
+  background-size: contain;
+  text-align: center;
+
+}
+/* src/components/ProgressBar.css */
+.progress-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Adjust as needed */
+}
+
+.progress-bar {
+  width: 400px;
+  height: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #d51860;
+  border-radius: 5px;
+}
+.result{
+  background-color: #d51860;
+  border-radius: 20px;
+  display: block;
+  width: 400px;
+  height: 200px;
+  margin-left: 500px;
+  margin-top:200px;
+
+}
+.result p ,.result h2 {
+  text-align: center ;
+  margin-top: 60px;
+}
+.playButtom{
+
+  background-color: pink;
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 1.2em; /* Adjust font size as needed */
+  border: none;
+  border-radius: 50px;
+  margin-right: 20px; /* Adjust border-radius as needed for rounded corners */
+  cursor: pointer;
+  position: flex;
+  margin-left: 130px;
+
+}
+.card-envelope-back{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #ccc;
+}
+.navbar{
+  background-color: #ccc;
+  position: fixed;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 600px; */
+  margin-top: 0 ;
+  border-bottom: 1.5px solid #f2f2f2;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+.score h4{
+  text-align: center;
+
+}
