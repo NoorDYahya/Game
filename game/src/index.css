@@ -186,3 +186,91 @@ body{
   text-align: center;
 
 }
+#user{
+  height: 24px;
+  width: 24px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+#chatBotButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  background-color: transparent;
+  border: none;
+}
+
+#chatPopup {
+  display: none; /* Hide the chat popup by default */
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 9998; /* Set z-index below chatbot button */
+  width: 400px;
+  height: auto; /* Change height to auto */
+  max-height: 400px; /* Add max-height to enable scrolling */
+  background-color: pink;
+  border: 2px solid white;
+  padding: 10px;
+  overflow: auto;
+  
+}
+
+#questionInput {
+  width: calc(100% - 20px); /* Adjusting for padding */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in width */
+  margin-bottom: 10px;
+}
+
+#sendButton {
+  background-color: #f1356d;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: calc(100% - 20px); /* Adjusting for padding */
+  margin-top: 10px;
+}
+
+#sendButton:hover {
+  background-color: #553285;
+}
+
+#message {
+  margin-bottom: 10px;
+}
+/* ChatBot.css */
+
+
+
+.user-message,
+.ai-message {
+  max-width: 70%;
+  margin-bottom: 10px;
+  clear: both;
+  word-wrap: break-word;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user-message {
+  /* Style for user messages */
+  background-color: #f1356d;
+  color: #fff;
+  float: left;
+}
+
+.ai-message {
+  /* Style for AI messages */
+  background-color: white;
+  color: black;
+  float: right;
+}

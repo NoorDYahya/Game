@@ -4,9 +4,10 @@ import win from './win.gif';
 import ProgressBar from './ProgressBar';
 import correctSound from './wineffect.mpeg'; 
 import wrongSound from './wrongeffect.mpeg';
-import celebrate from './confetti-31.gif'
-
+import user from './user.png'
 import swal from 'sweetalert';
+import ChatBot from './ChatBot';
+
 
 const App = () => {
 
@@ -16,6 +17,12 @@ const App = () => {
   const [openedEnvelopes, setOpenedEnvelopes] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
   const [gameEnded, setGameEnded] = useState(false);
+  const urlParams = new URLSearchParams(window.location.search);
+  let username = urlParams.get("username");
+  if(!username){
+username = "guest"
+  }
+
 //sound 
   const [correctSoundRef, setCorrectSoundRef] = useState(new Audio(correctSound));
   const [wrongSoundRef, setWrongSoundRef] = useState(new Audio(wrongSound));
@@ -36,7 +43,29 @@ const App = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(()=> {
+    console.log(username)
+    const userData = {
+      username: username, // Corrected syntax: use comma instead of semicolon
+    };
 
+    fetch('https://shesafebackend.onrender.com/api/user/getPoints', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      
+      })
+      .catch(error => {
+        console.error('Error during login:', error);
+      });
+
+  }, [])
 
 
   useEffect(() => {
@@ -72,7 +101,7 @@ const App = () => {
     else{
       setGameEnded(true);
       swal({
-        title: "Game Over!",
+        title: "The result",
         text: `Your Score: ${score} out of ${allQuestions.length}`,
         icon: "sucsses",
         buttons: ["Play Again", "Cancel"],
@@ -118,8 +147,10 @@ const App = () => {
 
   return (
     <div className="app">
-
-
+      <div className='User'>
+      <img id="user"src={user}alt="Circle " /> 
+      <h2>{username}</h2>
+      </div>
       <h1 style={{ textAlign: 'center', marginTop: '20px' }}>
         Envelope Game 💌
       </h1>
@@ -151,8 +182,15 @@ const App = () => {
               />
             )}
           </div>
+          <div className='bg-[#100F15] min-h-screen '>
+        
+            <ChatBot />
+            </div>
         </>
+
+        
       )}
+
     </div>
   );
 };
